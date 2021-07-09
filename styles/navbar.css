@@ -1,0 +1,87 @@
+/*-NAVIGATION*/
+
+.content header nav {
+  height: 100%;
+}
+
+.content header nav ul {
+  height: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/*--NAVIGATION-BUTTONS*/
+
+.content header nav .button,
+.content header nav .switch-div {
+  width: 14rem;
+  height: 6.6rem;
+  margin: 1rem 3rem;
+  background-color: var(--current-line);
+}
+
+.content header nav .button {
+  display: flex;
+  align-items: center;
+  border-radius: 2.5rem;
+
+  color: var(--foreground);
+
+  text-align: center;
+  box-shadow: none;
+  line-height: 2rem;
+  font-size: 2rem;
+  transition: 0.2s;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+
+/*--NAVIGATION-BUTTONS-PSEUDO*/
+
+.content header nav .button:hover {
+  background-color: var(--comment);
+  box-shadow: 0 0.7rem 0 var(--shadow);
+}
+
+.content header nav .button:active {
+  background-color: var(--purple);
+}
+
+/*--NAVIGATION-SWITCH*/
+
+.content header nav .switch-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.content header nav .switch-checkbox {
+  display: none;
+}
+
+.content header nav .switch-div {
+  position: relative;
+  border-radius: 10rem;
+  transition: background 0.2s;
+}
+
+.content header nav .switch-div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6.6rem;
+  height: 6.6rem;
+  border-radius: 50%;
+  background-color: var(--purple);
+  background-image: url(../assets/nav-switch-off.svg);
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.content header nav .switch-checkbox:checked ~ .switch-div::before {
+  background-color: var(--pink);
+  background-image: url(../assets/nav-switch-on.svg);
+  transform: translateX(7.4rem);
+}

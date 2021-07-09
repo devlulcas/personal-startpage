@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+
+:root {
+  /*DRACULA THEME COLORS*/
+  --background: hsl(231, 15%, 18%);
+  --shadow: hsl(232, 14%, 10%);
+  --current-line: hsl(232, 14%, 31%);
+  --comment: hsl(225, 27%, 51%);
+  --foreground: hsl(60, 30%, 96%);
+  --cyan: hsl(191, 97%, 77%);
+  --green: hsl(135, 94%, 65%);
+  --orange: hsl(31, 100%, 71%);
+  --pink: hsl(326, 100%, 74%);
+  --purple: hsl(265, 89%, 78%);
+  --red: hsl(0, 100%, 67%);
+  --yellow: hsl(65, 92%, 76%);
+
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background);
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 17rem 20.3rem 56.3rem;
+  grid-template-areas:
+    "navigation"
+    "search-container"
+    "apps-container";
+  overflow-y: hidden;
+}
+
+.content header,
+.content main,
+.content section {
+  display: flex;
+  justify-content: center;
+}
+
+/*AREAS*/
+.content header {
+  grid-area: navigation;
+}
+
+.content main {
+  grid-area: search-container;
+}
+
+.content section {
+  grid-area: apps-container;
+}
+
+.noselect {
+  user-select: none;
+}
