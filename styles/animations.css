@@ -1,0 +1,8 @@
+@keyframes fake-goes-up {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 0.7rem 0 var(--shadow);
+  }
+}

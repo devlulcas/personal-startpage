@@ -26,11 +26,8 @@
   display: flex;
   align-items: center;
   border-radius: 2.5rem;
-
   color: var(--foreground);
-
   text-align: center;
-  box-shadow: none;
   line-height: 2rem;
   font-size: 2rem;
   transition: 0.2s;
@@ -41,8 +38,8 @@
 /*--NAVIGATION-BUTTONS-PSEUDO*/
 
 .content header nav .button:hover {
+  animation: fake-goes-up 0.2s forwards;
   background-color: var(--comment);
-  box-shadow: 0 0.7rem 0 var(--shadow);
 }
 
 .content header nav .button:active {
@@ -74,14 +71,18 @@
   width: 6.6rem;
   height: 6.6rem;
   border-radius: 50%;
-  background-color: var(--purple);
-  background-image: url(../assets/nav-switch-off.svg);
+  background-color: var(--red);
+  /*DUCK DUCK GO*/
+  background-image: url(../assets/nav-switch-off.svg) ;
+  background-size: 6.6rem;
   z-index: 1;
   transition: 0.3s;
 }
 
 .content header nav .switch-checkbox:checked ~ .switch-div::before {
-  background-color: var(--pink);
-  background-image: url(../assets/nav-switch-on.svg);
+  background-color: var(--comment);
+  /*GOOGLE*/
+  background-image: url(../assets/nav-switch-on.svg) ;
+  background-size: 6.6rem;
   transform: translateX(7.4rem);
 }

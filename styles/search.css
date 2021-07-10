@@ -1,4 +1,56 @@
 /*-SEARCH*/
 
 .content main {
+  overflow-y: hidden;
+}
+
+.content main form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+/*--SEARCH-INPUT*/
+
+.content main form .input-query {
+  height: 5.5rem;
+  width: 70%;
+  border: none;
+  border-radius: 3.5rem;
+  margin-right: 2rem;
+  padding: 2rem;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 2rem;
+  color: var(--shadow);
+}
+
+.content main form .input-query::selection {
+  background-color: var(--purple);
+}
+
+/*--SEARCH-BUTTON*/
+
+.content main form .button-send-form {
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: 50%;
+  padding: 1rem;
+  background-color: var(--current-line);
+  transform: background 0.2s;
+}
+
+.content main form .button-send-form:hover {
+  background-color: var(--comment);
+  animation: fake-goes-up 0.2s forwards;
+}
+
+.content main form .button-send-form:active {
+  background-color: var(--purple);
+}
+
+.content main form .button-send-form img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }

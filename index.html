@@ -11,9 +11,14 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
 
     <!--STYLES-->
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/search.css" />
     <link rel="stylesheet" href="styles/styles.css" />
@@ -30,14 +35,13 @@
             <li><a class="button noselect" href="#">Lorem, ipsum.</a></li>
             <li><a class="button noselect" href="#">Lorem, ipsum.</a></li>
             <li><a class="button noselect" href="#">Lorem, ipsum.</a></li>
-            <li><a class="button noselect" href="#">Lorem, ipsum.</a></li>
             <label class="switch-label" for="switch-checkbox">
               <input
-              class="switch-checkbox"
-              type="checkbox"
-              name="switch-checkbox"
-              id="switch-checkbox"
-              checked
+                class="switch-checkbox"
+                type="checkbox"
+                name="switch-checkbox"
+                id="switch-checkbox"
+                checked
               />
               <div class="switch-div"></div>
             </label>
@@ -45,10 +49,25 @@
         </nav>
       </header>
       <main>
-        <form action="" method="">
-          <input type="text" name="" id="" />
-          <button type="submit">
-            <img src="" alt="" />
+        <form
+          action="https://www.google.com/search"
+          target="_blank"
+          method="get"
+        >
+          <input
+            type="text"
+            name="q"
+            id="q"
+            class="input-query"
+            autofocus
+            autocomplete="off"
+          />
+          <button class="button-send-form noselect" type="submit">
+            <img
+              src="assets/search-icon.svg"
+              alt="pesquisar"
+              draggable="false"
+            />
           </button>
         </form>
       </main>
@@ -60,5 +79,4 @@
     </div>
     <script src="javascript/app.js"></script>
   </body>
-  </html>
-  
+</html>
