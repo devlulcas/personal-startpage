@@ -25,6 +25,7 @@
 .content header nav .button {
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 2.5rem;
   color: var(--foreground);
   text-align: center;
@@ -73,7 +74,7 @@
   border-radius: 50%;
   background-color: var(--red);
   /*DUCK DUCK GO*/
-  background-image: url(../assets/nav-switch-off.svg) ;
+  background-image: url(../assets/nav-switch-off.svg);
   background-size: 6.6rem;
   z-index: 1;
   transition: 0.3s;
@@ -82,7 +83,7 @@
 .content header nav .switch-checkbox:checked ~ .switch-div::before {
   background-color: var(--comment);
   /*GOOGLE*/
-  background-image: url(../assets/nav-switch-on.svg) ;
+  background-image: url(../assets/nav-switch-on.svg);
   background-size: 6.6rem;
   transform: translateX(7.4rem);
 }
