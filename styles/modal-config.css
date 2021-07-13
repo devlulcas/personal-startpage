@@ -1,0 +1,94 @@
+/*-MODAL*/
+
+/*-MODAL-VISIBILITY-JS*/
+[data-modal-active="false"] {
+  visibility: hidden;
+  opacity: 0;
+}
+
+[data-modal-active="true"] {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*-MODAL-CONTAINER*/
+.modal-config-container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin: 0 auto;
+  background-color: var(--modal-background);
+}
+
+/*-MODAL-CONTAINER-CONTENT*/
+.modal-config-container .modal-config-content {
+  height: 90%;
+  width: 80%;
+  border-radius: 2rem;
+  background-color: var(--current-line);
+}
+
+.modal-config-container .modal-config-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/*-MODAL-GENERAL CONFIGS*/
+.modal-config-container .modal-config-content form .label-configs {
+  font-size: 3rem;
+  width: 70%;
+  color: var(--green);
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+
+.modal-config-container .modal-config-content form input[type="text"] {
+  width: 70%;
+  height: 3rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  padding-left: 1rem;
+  border-radius: 1rem;
+}
+
+/*-MODAL-GENERAL CONFIGS-BUTTONS*/
+.modal-config-container .modal-config-content form button {
+  background-color: var(--comment);
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--foreground);
+  padding: 1rem;
+  border-radius: 2rem;
+  margin: 3rem;
+}
+
+.modal-config-container .modal-config-content form button:hover {
+  background-color: var(--purple);
+  animation: fake-goes-up 0.2s forwards;
+  color: var(--shadow);
+}
+
+.modal-config-container .modal-config-content form button:active {
+  background-color: var(--pink);
+}
+
+.modal-config-container .modal-config-content form button.cancel {
+  background-color: var(--red);
+}
+
+.modal-config-container .modal-config-content form button.cancel:hover {
+  background-color: var(--orange);
+  color: var(--shadow);
+}
+.modal-config-container .modal-config-content form button.cancel:active {
+  background-color: var(--yellow);
+}

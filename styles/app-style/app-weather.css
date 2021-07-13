@@ -1,0 +1,57 @@
+.content section .apps#weather,
+.content section .apps#weather > section,
+.content section .apps#weather button {
+  display: flex;
+  align-items: center;
+}
+
+.content section .apps#weather {
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+.content section .apps#weather > img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.content section .apps#weather > section {
+  height: 8rem;
+  width: 100%;
+  justify-content: left;
+  padding: 0;
+  margin: 1rem;
+  background-color: transparent;
+}
+
+.content section .apps#weather section img {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 2.5rem 0 2rem;
+}
+
+.content section .apps#weather section .weather-info {
+  font-size: 3rem;
+  font-family: "Poppins";
+  font-weight: 600;
+  text-align: center;
+  color: var(--foreground);
+}
+
+.content section .apps#weather button {
+  width: 5rem;
+  height: 6rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--foreground);
+}
+
+.content section .apps#weather button > img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.content section .apps#weather button > img:hover {
+  animation: hover-spin 2s forwards;
+}

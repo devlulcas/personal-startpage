@@ -1,0 +1,75 @@
+/*--APPS-NOTEBLOCK*/
+
+.content section .apps#noteblock {
+  position: relative;
+  --lines: #ffffff67;
+}
+
+.content section .apps#noteblock::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(0.6);
+  background-image: url(../../assets/flowers.jpg);
+  background-size: cover;
+}
+
+/*--APPS-NOTEBLOCK-UTILS-TEXTAREA*/
+
+.content section .apps#noteblock textarea {
+  position: relative;
+  width: 100%;
+  height: 85%;
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+  font-size: 1.4rem;
+  color: var(--foreground);
+  resize: none;
+  word-wrap: break-word;
+}
+
+.content section .apps#noteblock textarea::placeholder {
+  color: var(--lines);
+  text-align: center;
+}
+
+.content section .apps#noteblock textarea::selection {
+  background-color: var(--current-line);
+}
+
+/*--APPS-NOTEBLOCK-UTILS*/
+
+.content section .apps#noteblock .utils {
+  position: relative;
+  display: flex;
+  height: 14%;
+}
+
+.content section .apps#noteblock .utils button {
+  width: 50%;
+  height: 101%;
+  background-color: transparent;
+  border-top: 0.3rem solid var(--lines);
+  padding: 1rem;
+}
+
+.content section .apps#noteblock .utils button:hover {
+  background-color: var(--lines);
+}
+
+.content section .apps#noteblock .utils button:active {
+  background-color: var(--foreground);
+}
+
+.content section .apps#noteblock .utils button:nth-child(1) {
+  border-right: 0.3rem solid var(--lines);
+}
+
+.content section .apps#noteblock .utils button img {
+  height: 100%;
+}
