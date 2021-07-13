@@ -16,6 +16,12 @@ async function getWeatherData(url) {
   return [temperature, apparentTemperature, weatherDescription];
 }
 
+function changeIconTitle() {
+  const icon = document.querySelector("#weather-app-icon");
+  const city = localStorage.getItem("setting-city")
+  icon.title = `Clima em ${city.charAt(0).toUpperCase()}${city.slice(1)}`
+}
+
 function showWeatherData(temperature, apparentTemperature, description) {
   const temperatureField = document.querySelector("#temperature");
   const weatherDescriptionField = document.querySelector(
@@ -23,6 +29,7 @@ function showWeatherData(temperature, apparentTemperature, description) {
   );
   temperatureField.textContent = `${temperature}º - ${apparentTemperature}º`;
   weatherDescriptionField.textContent = description;
+  changeIconTitle();
 }
 
 async function loadWeatherUi() {
