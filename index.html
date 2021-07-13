@@ -21,12 +21,19 @@
     <link rel="stylesheet" href="styles/animations.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/search.css" />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/modal-config.css" />
+
+    <!--STYLES - APPS-->
+    <link rel="stylesheet" href="styles/apps.css" />
+    <link rel="stylesheet" href="styles/app-style/app-noteblock.css" />
+    <link rel="stylesheet" href="styles/app-style/app-weather.css" />
+    <link rel="stylesheet" href="styles/app-style/app-todo.css" />
 
     <title>Startpage</title>
   </head>
   <body>
     <div class="content">
+      <!--NAVIGATION-->
       <header>
         <nav>
           <ul>
@@ -48,11 +55,14 @@
           </ul>
         </nav>
       </header>
+
+      <!--SEARCH-->
       <main>
         <form
           action="https://www.google.com/search"
           target="_blank"
           method="get"
+          id="main-search-form"
         >
           <input
             type="text"
@@ -71,12 +81,77 @@
           </button>
         </form>
       </main>
+
+      <!--APPS-->
       <section>
+        <!--TODO LIST-->
         <div class="apps"></div>
-        <div class="apps"></div>
-        <div class="apps"></div>
+
+        <!--WEATHER-->
+        <div id="weather" class="apps noselect">
+          <img src="assets/thermometer.svg" alt="Termômetro" />
+
+          <section>
+            <img src="assets/temperature.svg" alt="" />
+            <p id="temperature" class="weather-info">Incorrect config</p>
+          </section>
+
+          <section>
+            <img src="assets/weather-description.svg" alt="" />
+            <p id="weather-description" class="weather-info">Incorrect config</p>
+          </section>
+
+          <button id="modal-open-button">
+            <img src="assets/settings.svg" alt="configurações" />
+          </button>
+        </div>
+
+        <!--NOTEBLOCK-->
+        <div id="noteblock" class="apps">
+          <textarea
+            id="noteblock-text"
+            placeholder="Digite algo"
+            value=""
+          ></textarea>
+          <div class="utils noselect">
+            <button id="noteblock-copy">
+              <img src="assets/copy-icon.svg" alt="Copiar" />
+            </button>
+            <button id="noteblock-delete">
+              <img src="assets/trash-icon.svg" alt="Deletar" />
+            </button>
+          </div>
+        </div>
       </section>
     </div>
-    <script src="javascript/app.js"></script>
+
+    <!--MODAL CONFIG-->
+    <div class="modal-config-container" data-modal-active="false">
+      <div class="modal-config-content">
+        <form name="weather-configs" id="weather-configs">
+          <label class="label-configs noselect" for="api-key">API KEY</label>
+          <input type="text" name="api-key" id="api-key" />
+
+          <label class="label-configs noselect" for="country">PAÍS</label>
+          <input type="text" name="country" id="country" />
+
+          <label class="label-configs noselect" for="state">ESTADO</label>
+          <input type="text" name="state" id="state" />
+
+          <label class="label-configs noselect" for="city">CIDADE</label>
+          <input type="text" name="city" id="city" />
+          <div class="buttons">
+            <button id="modal-save-button">Salvar configurações</button>
+            <button id="modal-cancel-button" class="cancel">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--SCRIPTS-->
+    <script src="javascript/search-engine.js"></script>
+    <script src="javascript/app-weather.js" type="module"></script>
+    <script src="javascript/app-weather-config.js" type="module"></script>
+    <script src="javascript/app-noteblock.js"></script>
   </body>
 </html>

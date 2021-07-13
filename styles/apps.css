@@ -1,4 +1,14 @@
 /*-APPS*/
 
 .content section {
+  padding: 4rem 6.6rem;
+}
+
+.content section .apps {
+  width: 25%;
+  height: 60%;
+  margin: 0 2rem;
+  border-radius: 1rem;
+  background-color: var(--current-line);
+  overflow: hidden;
 }

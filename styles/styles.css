@@ -6,14 +6,16 @@
   text-decoration: none;
   list-style: none;
   outline: none;
+  border: none;
 }
 
 :root {
   /*DRACULA THEME COLORS*/
-  --background: #272935;
-  --shadow: #16171d;
-  --current-line: #44475a;
-  --comment: #6071a4;
+  --background: hsl(231, 15%, 18%);
+  --shadow: hsl(231, 14%, 10%);
+  --modal-background: hsla(231, 14%, 10%, 0.8);
+  --current-line: rgb(68, 71, 90);
+  --comment: rgb(96, 113, 164);
   --foreground: #f8f8f2;
   --cyan: #8be8fd;
   --green: #52fa7c;
@@ -70,8 +72,12 @@ body {
 }
 
 button {
-  border: none;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+input,
+textarea {
+  font-family: "Noto Sans", sans-serif;
 }
