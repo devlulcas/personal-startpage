@@ -66,6 +66,9 @@ function createTodo(todoText) {
   const todoListItem = document.createElement("li");
   const todoParagraph = document.createElement("p");
   const todoButton = document.createElement("button");
+  const todoImage = document.createElement("img");
+  todoImage.src = "./assets/bat-icon.svg";
+  todoButton.appendChild(todoImage);
   //Insert content
   todoParagraph.textContent = todoText;
   //Append elements
