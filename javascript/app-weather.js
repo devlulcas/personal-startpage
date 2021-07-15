@@ -4,8 +4,18 @@ function getWeatherUrl() {
 }
 
 async function loadWeather(url) {
-  const weatherJson = await fetch(url).then((response) => response.json());
-  return weatherJson.data[0];
+  try {
+    const weatherJson = await fetch(url).then((response) => response.json());
+    return weatherJson.data[0];
+  } catch (error) {
+    console.log(error);
+    const falseResponse = {
+      temp: "XX",
+      app_temp: "XX",
+      weather: { description: "XXXXXX" },
+    };
+    return falseResponse;
+  }
 }
 
 async function getWeatherData(url) {
