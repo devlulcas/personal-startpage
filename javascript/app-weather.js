@@ -1,5 +1,4 @@
-const ls = localStorage;
-
+//----------- Old Weather App Config Division ---------------
 //Elements
 const modal = document.querySelector("[data-modal-active]");
 const modalForm = document.getElementById("weather-configs");
@@ -11,9 +10,10 @@ const modalInputs = [...modalForm.elements].filter((element) => {
 });
 
 //Event listeners
-window.onload = () => {
+window.onload = async () => {
   loadConfigUi();
   createWeatherURL();
+  await loadWeatherUi();
 };
 
 modalOpenButton.onclick = () => {
@@ -44,10 +44,10 @@ function closeModal() {
 }
 
 function getConfig() {
-  const apiKey = ls.getItem("setting-apikey") || "123";
-  const country = ls.getItem("setting-country") || "brazil";
-  const state = ls.getItem("setting-state") || "bahia";
-  const city = ls.getItem("setting-city") || "salvador";
+  const apiKey = localStorage.getItem("setting-apikey") || "123";
+  const country = localStorage.getItem("setting-country") || "brazil";
+  const state = localStorage.getItem("setting-state") || "bahia";
+  const city = localStorage.getItem("setting-city") || "salvador";
   return {
     apiKey,
     country,
@@ -62,10 +62,10 @@ function setConfig(
   state = "bahia",
   city = "salvador"
 ) {
-  ls.setItem("setting-apikey", apiKey);
-  ls.setItem("setting-country", country);
-  ls.setItem("setting-state", state);
-  ls.setItem("setting-city", city);
+  localStorage.setItem("setting-apikey", apiKey);
+  localStorage.setItem("setting-country", country);
+  localStorage.setItem("setting-state", state);
+  localStorage.setItem("setting-city", city);
 }
 
 function loadConfigUi() {
@@ -86,13 +86,13 @@ function createWeatherURL() {
   const baseUrl = `https://api.weatherbit.io/v2.0/current?`;
   const configUrl = `city=${config.city}&country=${config.country}&state=${config.state}&lang=pt&key=${config.apiKey}`;
   const finalurl = `${baseUrl}${configUrl}`;
-  ls.setItem("setting-finalurl", finalurl);
+  localStorage.setItem("setting-finalurl", finalurl);
 }
 
-//-----------
+//----------- Old Weather App Division ---------------
 
 function getWeatherUrl() {
-  const url = ls.getItem("setting-finalurl");
+  const url = localStorage.getItem("setting-finalurl");
   return url;
 }
 
@@ -121,7 +121,7 @@ async function getWeatherData(url) {
 
 function changeIconTitle() {
   const icon = document.getElementById("weather-app-icon");
-  const city = ls.getItem("setting-city");
+  const city = localStorage.getItem("setting-city");
   icon.title = `Clima em ${city.charAt(0).toUpperCase()}${city.slice(1)}`;
 }
 
@@ -140,7 +140,3 @@ async function loadWeatherUi() {
   const weatherData = await getWeatherData(weatherUrl);
   showWeatherData(...weatherData);
 }
-
-window.onload = async () => await loadWeatherUi();
-
-//export { loadWeatherUi };
