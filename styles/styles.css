@@ -78,6 +78,7 @@ button {
 }
 
 input,
-textarea {
+textarea,
+p {
   font-family: "Noto Sans", sans-serif;
 }

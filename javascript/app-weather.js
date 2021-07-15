@@ -17,13 +17,13 @@ async function getWeatherData(url) {
 }
 
 function changeIconTitle() {
-  const icon = document.querySelector("#weather-app-icon");
-  const city = localStorage.getItem("setting-city")
-  icon.title = `Clima em ${city.charAt(0).toUpperCase()}${city.slice(1)}`
+  const icon = document.getElementById("weather-app-icon");
+  const city = localStorage.getItem("setting-city");
+  icon.title = `Clima em ${city.charAt(0).toUpperCase()}${city.slice(1)}`;
 }
 
 function showWeatherData(temperature, apparentTemperature, description) {
-  const temperatureField = document.querySelector("#temperature");
+  const temperatureField = document.getElementById("temperature");
   const weatherDescriptionField = document.querySelector(
     "#weather-description"
   );

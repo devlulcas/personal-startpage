@@ -1,27 +1,49 @@
 import { loadWeatherUi } from "./app-weather.js";
 const ls = localStorage;
 
-//The modal itself
+//Elements
 const modal = document.querySelector("[data-modal-active]");
-//Modal elements
-const modalForm = document.querySelector("#weather-configs");
-const modalOpenButton = document.querySelector("#modal-open-button");
-const modalCancelButton = document.querySelector("#modal-cancel-button");
-const modalSaveButton = document.querySelector("#modal-save-button");
-//Getting the form elements and extracting only the inputs
+const modalForm = document.getElementById("weather-configs");
+const modalOpenButton = document.getElementById("modal-open-button");
+const modalCancelButton = document.getElementById("modal-cancel-button");
+const modalSaveButton = document.getElementById("modal-save-button");
 const modalInputs = [...modalForm.elements].filter((element) => {
   if (element.type == "text") return element;
 });
 
-//Change the modalActive data attribute to open/close the modal
+//Event listeners
+window.onload = () => {
+  loadConfigUi();
+  createWeatherURL();
+};
+
+modalOpenButton.onclick = () => {
+  loadConfigUi();
+  openModal();
+};
+
+modalCancelButton.onclick = (ev) => {
+  ev.preventDefault();
+  closeModal();
+};
+
+modalSaveButton.onclick = async (ev) => {
+  ev.preventDefault();
+  saveConfigFromUiToStorage();
+  createWeatherURL();
+  await loadWeatherUi();
+  closeModal();
+};
+
+//Functions
 function openModal() {
   modal.dataset.modalActive = "true";
 }
+
 function closeModal() {
   modal.dataset.modalActive = "false";
 }
 
-//Get the config stored in local storage
 function getConfig() {
   const apiKey = ls.getItem("setting-apikey") || "123";
   const country = ls.getItem("setting-country") || "brazil";
@@ -35,7 +57,6 @@ function getConfig() {
   };
 }
 
-//Set the config in local storage
 function setConfig(
   apiKey = "123",
   country = "brazil",
@@ -48,21 +69,19 @@ function setConfig(
   ls.setItem("setting-city", city);
 }
 
-//Load the stored config in the input fields
-function loadConfig() {
+function loadConfigUi() {
   const storedConfig = getConfig();
   modalInputs[0].value = storedConfig.apiKey;
   modalInputs[1].value = storedConfig.country;
   modalInputs[2].value = storedConfig.state;
   modalInputs[3].value = storedConfig.city;
 }
-//Treat the config an save them in ls
-function saveConfig() {
+
+function saveConfigFromUiToStorage() {
   const newConfig = modalInputs.map((input) => input.value.toLowerCase());
   setConfig(...newConfig);
 }
 
-//Create a new apiUrl and store it
 function createWeatherURL() {
   const config = getConfig();
   const baseUrl = `https://api.weatherbit.io/v2.0/current?`;
@@ -70,28 +89,3 @@ function createWeatherURL() {
   const finalurl = `${baseUrl}${configUrl}`;
   ls.setItem("setting-finalurl", finalurl);
 }
-
-//-----> Buttons
-window.onload = () => {
-  loadConfig();
-  createWeatherURL();
-};
-
-//Opens the modal with the actual config
-modalOpenButton.onclick = () => {
-  loadConfig();
-  openModal();
-};
-//Close the modal
-modalCancelButton.onclick = (event) => {
-  event.preventDefault();
-  closeModal();
-};
-//Save the configs then closes the modal
-modalSaveButton.onclick = async (event) => {
-  event.preventDefault();
-  saveConfig();
-  createWeatherURL();
-  await loadWeatherUi();
-  closeModal();
-};

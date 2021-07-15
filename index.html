@@ -38,27 +38,42 @@
         <nav>
           <ul>
             <li>
-              <a class="button noselect" href="https://www.instagram.com/"
+              <a
+                class="button noselect"
+                target="_blank"
+                href="https://www.instagram.com/"
                 >Instagram</a
               >
             </li>
             <li>
-              <a class="button noselect" href="https://www.youtube.com/"
+              <a
+                class="button noselect"
+                target="_blank"
+                href="https://www.youtube.com/"
                 >YouTube</a
               >
             </li>
             <li>
-              <a class="button noselect" href="https://www.reddit.com/"
+              <a
+                class="button noselect"
+                target="_blank"
+                href="https://www.reddit.com/"
                 >Reddit</a
               >
             </li>
             <li>
-              <a class="button noselect" href="https://github.com/devlulcas"
+              <a
+                class="button noselect"
+                target="_blank"
+                href="https://github.com/devlulcas"
                 >GitHub</a
               >
             </li>
             <li>
-              <a class="button noselect" href="https://twitter.com/home"
+              <a
+                class="button noselect"
+                target="_blank"
+                href="https://twitter.com/home"
                 >Twitter</a
               >
             </li>
@@ -105,7 +120,12 @@
       <!--APPS-->
       <section>
         <!--TODO LIST-->
-        <div class="apps"></div>
+        <div id="todo" class="apps">
+          <ul id="todo-list">
+            
+          </ul>
+          <input type="text" id="todo-input" placeholder="Ex:Lavar os pratos" />
+        </div>
 
         <!--WEATHER-->
         <div id="weather" class="apps noselect">
@@ -124,18 +144,19 @@
             />
             <p id="temperature" class="weather-info">Incorrect config</p>
           </section>
-
           <section>
             <img
               src="assets/weather-description.svg"
               alt="Tempo"
               title="descrição do tempo"
             />
-            <p id="weather-description" class="weather-info">
+            <p
+              id="weather-description"
+              class="weather-info weather-description"
+            >
               Incorrect config
             </p>
           </section>
-
           <button id="modal-open-button">
             <img
               src="assets/settings.svg"
@@ -192,5 +213,6 @@
     <script src="javascript/app-weather.js" type="module"></script>
     <script src="javascript/app-weather-config.js" type="module"></script>
     <script src="javascript/app-noteblock.js"></script>
+    <script src="javascript/app-todo.js" type="module"></script>
   </body>
 </html>

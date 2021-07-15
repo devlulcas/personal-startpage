@@ -15,3 +15,31 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes shake-shake-bololo {
+  10% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes disappear {
+  100% {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+}

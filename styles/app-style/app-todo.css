@@ -1,0 +1,75 @@
+.content section .apps#todo,
+.content section .apps#todo li,
+.content section .apps#todo li p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content section .apps#todo {
+  position: relative;
+  overflow: hidden;
+  padding-top: 1rem;
+}
+
+.content section .apps#todo ul {
+  overflow-y: auto;
+  height: 30rem;
+}
+
+.content section .apps#todo ul::-webkit-scrollbar {
+  display: none;
+}
+
+.content section .apps#todo ul li {
+  flex-direction: row;
+  height: 5rem;
+  margin: 0.6rem 0;
+  transition: all 0.3s;
+}
+
+.disappear {
+  animation: disappear 0.2s forwards;
+}
+
+.content section .apps#todo ul li p {
+  font-size: 1.5rem;
+  width: 27rem;
+  height: 100%;
+  border-radius: 1rem;
+  margin-right: 0.6rem;
+  justify-content: center;
+  word-wrap: break-word;
+  padding: 0 0.3rem;
+  text-align: center;
+  color: var(--foreground);
+  background-color: var(--comment);
+}
+
+.content section .apps#todo ul li button {
+  width: 3rem;
+  height: 100%;
+  border-radius: 1.5rem;
+  background-color: var(--green);
+}
+
+.content section .apps#todo ul li button:hover {
+  animation: shake-shake-bololo 1.5s infinite;
+}
+
+.content section .apps#todo ul li button:active {
+  filter: hue-rotate(160deg);
+  animation: none;
+}
+
+.content section .apps#todo input {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 15%;
+  background-color: var(--shadow);
+  border: none;
+  padding: 0 0 0 2rem;
+  font-size: 1.4rem;
+  color: var(--foreground);
+}
