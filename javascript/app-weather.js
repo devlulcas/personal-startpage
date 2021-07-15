@@ -141,6 +141,6 @@ async function loadWeatherUi() {
   showWeatherData(...weatherData);
 }
 
-await loadWeatherUi();
+window.onload = async () => await loadWeatherUi();
 
 //export { loadWeatherUi };
