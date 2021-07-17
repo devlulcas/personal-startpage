@@ -15,7 +15,7 @@
 
 .content section .apps#todo ul {
   overflow-y: auto;
-  height: 30rem;
+  height: 28rem;
 }
 
 .content section .apps#todo ul::-webkit-scrollbar {
