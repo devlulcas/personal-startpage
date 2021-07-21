@@ -10,29 +10,32 @@ todoInput.addEventListener("keypress", (ev) => {
 });
 
 todoList.addEventListener("click", (ev) => {
-  removeTodoFromUi(ev);
-  const todo = todoList.previousSibling.textContent;
-  deleteTodo(todo, getTodos());
+  if (ev.target.type === "submit") {
+    const todo = ev.target.previousSibling.textContent;
+    removeTodoFromUi(ev);
+    deleteTodo(todo, getTodos());
+  }
 });
 
 //Functions
 
 function addTodo(ev) {
   const todoText = todoInput.value;
-  setTodo(todoText, getTodos());
-  createTodo(todoText);
-  todoInput.value = "";
+  if (todoText) {
+    setTodo(todoText, getTodos());
+    createTodo(todoText);
+    todoInput.value = "";
+  }
 }
 
 function removeTodoFromUi(ev) {
   const element = ev.target;
   const todo = element.parentElement;
-  if (element.type === "submit") {
-    todo.classList.add("disappear");
-    todo.addEventListener("animationend", () => {
-      todo.remove();
-    });
-  }
+
+  todo.classList.add("disappear");
+  todo.addEventListener("animationend", () => {
+    todo.remove();
+  });
 }
 
 function getTodos() {
